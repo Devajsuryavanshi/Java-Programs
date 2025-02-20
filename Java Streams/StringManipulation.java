@@ -15,11 +15,17 @@ public class StringManipulation {
         //Sort each name alphabetically and then compare and print the sorted names
         List sortedNames = names.stream().map(s -> sortAlphabetically(s)).sorted((s1,s2) -> s1.compareTo(s2)).collect(Collectors.toList());
         System.out.println(sortedNames);
+
+        System.out.println("Starts with A count = "+startsWithCount('A'));
     }
 
     public static String sortAlphabetically(String s){
         char[] name = s.toCharArray();
         Arrays.sort(name);
         return new String(name);
+    }
+
+    public static long startsWithCount(char letter){
+        return names.stream().filter(s -> s.charAt(0) == letter).map(s -> s).count();
     }
 }
