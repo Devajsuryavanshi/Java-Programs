@@ -9,5 +9,6 @@ public class RemoveDuplicate {
         Set<String> namesSet = names.stream().collect(Collectors.toSet());
 
         System.out.println(namesSet);
+
     }
 }
